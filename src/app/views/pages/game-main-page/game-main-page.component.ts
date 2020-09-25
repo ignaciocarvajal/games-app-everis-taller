@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { GameApiService } from 'src/app/core/services/game-api.service';
 
@@ -10,7 +11,8 @@ import { GameApiService } from 'src/app/core/services/game-api.service';
 export class GameMainPageComponent implements OnInit {
   games: Observable<any[]>;
   constructor(
-    private readonly api: GameApiService
+    private readonly api: GameApiService,
+    private readonly router: Router
   ) { }
 
   ngOnInit(): void {
@@ -27,11 +29,11 @@ export class GameMainPageComponent implements OnInit {
   }
 
   edit(id: string) {
-    console.log('mi edit id', id);
+   this.router.navigate(['/games/update', id])
   }
 
   detail(id: string) {
-    console.log('mi detail id', id);
+    this.router.navigate(['/games/detail', id])
   }
 
 }
