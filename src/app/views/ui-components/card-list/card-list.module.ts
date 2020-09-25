@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardListComponent } from './card-list.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -17,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatCardModule,
     MatButtonModule,
   ],
-  exports: [CardListComponent]
+  exports: [CardListComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class CardListModule { }
