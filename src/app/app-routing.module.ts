@@ -21,13 +21,13 @@ const routes: Routes = [
     )
   },
   {
-    path: 'detail/:id',
+    path: 'games/detail/:id',
     loadChildren: () => import('./views/pages/games-detail-page/games-detail-page.module').then(
       (m) => m.GamesDetailPageModule
     )
   },
   {
-    path: 'update/:id',
+    path: 'games/update/:id',
     loadChildren: () => import('./views/pages/games-update-page/games-update-page.module').then(
       (m) => m.GamesUpdatePageModule
     )

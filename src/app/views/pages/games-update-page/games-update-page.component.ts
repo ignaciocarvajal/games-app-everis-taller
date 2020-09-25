@@ -8,6 +8,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class GamesUpdatePageComponent implements OnInit {
   id: string;
+  game: any;
   constructor(
     private readonly route: ActivatedRoute
   ) { }
