@@ -15,7 +15,7 @@ const routes: Routes = [
     )
   },
   {
-    path: 'create',
+    path: 'games/create',
     loadChildren: () => import('./views/pages/games-create-page/games-create-page.module').then(
       (m) => m.GamesCreatePageModule
     )
@@ -31,7 +31,11 @@ const routes: Routes = [
     loadChildren: () => import('./views/pages/games-update-page/games-update-page.module').then(
       (m) => m.GamesUpdatePageModule
     )
-  }
+  },
+  {
+    path: '**',
+    redirectTo: 'games',
+  },
 ];
 
 @NgModule({

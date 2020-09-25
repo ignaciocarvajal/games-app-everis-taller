@@ -8,10 +8,14 @@ import { GameMainPageModule } from './views/pages/game-main-page/game-main-page.
 import { GamesCreatePageModule } from './views/pages/games-create-page/games-create-page.module';
 import { GamesUpdatePageModule } from './views/pages/games-update-page/games-update-page.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule  } from '@angular/flex-layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { CardListComponent } from './views/ui-components/card-list/card-list.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,7 +24,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     GameMainPageModule,
     GamesCreatePageModule,
     GamesUpdatePageModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
