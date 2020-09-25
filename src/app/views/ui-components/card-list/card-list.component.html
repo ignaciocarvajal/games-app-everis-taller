@@ -10,7 +10,7 @@
             {{ game.description }}
           </p>
         </mat-card-content>
-        <mat-card-actions>
+        <mat-card-actions fxLayout="row" fxLayoutAlign="center end">
           <button mat-button (click)="detail(game._id)">Detalle</button>
           <button mat-button (click)="edit(game._id)">Editar</button>
           <button mat-button (click)="delete(game._id)">Eliminar</button>
