@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'game-form',
@@ -17,17 +17,31 @@ export class FormComponent implements OnInit {
   }
 createForm(){
   this.formGroup = this.formBuilder.group({
-    title: '',
+    title: [null, [Validators.required, Validators.minLength(5)]],
+    price: [null, [Validators.required, Validators.pattern('^[0-9]*$')]],
   });
 }
 
-// getErrorTitle() {
-//   return this.formGroup.get('title').hasError('required')
-//     ? 'Field is required'
-//     : this.formGroup.get('title').hasError('minlength')
-//     ? 'The field must be at least 5 characters long'
-//     : '';
-// }
+getErrorTitle() {
+  return this.formGroup.get('title').hasError('required')
+    ? 'El campo es obligatorio'
+    : this.formGroup.get('title').hasError('minlength')
+    ? 'El largo minimo debe ser'
+    : '';
+}
+
+getErrorPrice() {
+  return this.formGroup.get('price').hasError('required')
+    ? 'El campo es obligatorio'
+    : this.formGroup.get('price').hasError('pattern')
+    ? 'Solo Numeros'
+    : '';
+}
+
+onSubmit(data: any) {
+  console.log('onSubmit data -->', data);
+  
+}
 
   
 

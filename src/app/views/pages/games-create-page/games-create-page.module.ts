@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { GamesCreatePageRoutingModule } from './games-create-page-routing.module';
 import { GamesCreatePageComponent } from './games-create-page.component';
+import { FormModule } from '../../ui-components/form/form.module';
 
 
 @NgModule({
   declarations: [ GamesCreatePageComponent ],
   imports: [
     CommonModule,
-    GamesCreatePageRoutingModule
+    GamesCreatePageRoutingModule,
+    FormModule
   ],
   exports: [ GamesCreatePageComponent ]
 })

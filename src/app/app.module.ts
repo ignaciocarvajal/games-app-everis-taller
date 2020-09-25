@@ -10,7 +10,7 @@ import { GamesUpdatePageModule } from './views/pages/games-update-page/games-upd
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule  } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { CardListComponent } from './views/ui-components/card-list/card-list.component';
+import { HeaderModule } from './views/ui-components/header/header.module';
 
 
 @NgModule({
@@ -27,6 +27,7 @@ import { CardListComponent } from './views/ui-components/card-list/card-list.com
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatToolbarModule,
+    HeaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
