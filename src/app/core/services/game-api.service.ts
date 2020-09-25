@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators'
 
 
@@ -20,7 +21,12 @@ export class GameApiService {
     private readonly http: HttpClient
   ) { }
 
-  getAll () {}
+  getAll (): Observable<any[]> {
+    const url = `${path.getAll}`;
+    return this.http.get(url).pipe(
+      map((res: any[]) => res)
+    );
+  }
   getById () {}
 
   create(game: any) {
