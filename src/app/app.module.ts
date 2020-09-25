@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule  } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HeaderModule } from './views/ui-components/header/header.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { HeaderModule } from './views/ui-components/header/header.module';
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatToolbarModule,
-    HeaderModule
+    HeaderModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
