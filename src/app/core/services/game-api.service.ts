@@ -27,7 +27,14 @@ export class GameApiService {
       map((res: any[]) => res)
     );
   }
-  getById () {}
+  getById (id: string) {
+    const url = `${path.getById}${id}`;
+    return this.http.get(url).pipe(
+      map( (response: any) => {
+        return response;
+      })
+    )
+  }
 
   create(game: any) {
     const url = `${path.create}`;

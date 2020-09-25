@@ -21,4 +21,17 @@ export class GameMainPageComponent implements OnInit {
    this.games = this.api.getAll();
   }
 
+  delete(id: string) {
+   console.log('mi delete id', id);
+   
+  }
+
+  edit(id: string) {
+    console.log('mi edit id', id);
+  }
+
+  detail(id: string) {
+    console.log('mi detail id', id);
+  }
+
 }
