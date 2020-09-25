@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators'
+import { catchError, map } from 'rxjs/operators'
 
 
 const path = {
@@ -45,8 +45,23 @@ export class GameApiService {
     )
   }
 
-  update() {}
-  delete () {}
+  update(id: string, game: any) {
+    const url = `${path.update}${id}`;
+    return this.http.put(url, game).pipe(
+      map((res: any) => {
+        return res
+      })
+    )
+  }
+  
+  delete (id: string) {
+    const url = `${path.delete}${id}`;
+    return this.http.delete(id).pipe(
+      map((res: any) => {
+        return res;
+      })
+    )
+  }
 
 
 }

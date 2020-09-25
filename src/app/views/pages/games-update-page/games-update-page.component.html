@@ -1,3 +1,3 @@
 <h1>Actualizacion de Juego</h1>
-<game-form [game]="game" [edit]="true" [detail]="false"></game-form>
+<game-form *ngIf="game" [game]="game" [edit]="true" [detail]="false"(post)="post($event)"></game-form>
 

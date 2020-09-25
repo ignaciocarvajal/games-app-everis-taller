@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { map } from 'rxjs/operators';
+import { GameApiService } from 'src/app/core/services/game-api.service';
 
 @Component({
   selector: 'games-games-update-page',
@@ -10,13 +12,31 @@ export class GamesUpdatePageComponent implements OnInit {
   id: string;
   game: any;
   constructor(
-    private readonly route: ActivatedRoute
+    private readonly route: ActivatedRoute,
+    private readonly api: GameApiService,
   ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       this.id = params['id']
+    });
+    this.getGameById(this.id);
+  }
+
+  getGameById(id: string) {
+    this.api.getById(id).pipe(
+      map((res: any) => res)
+    ).subscribe((reponse: any) => {
+      this.game = reponse
     })
+  }
+
+  post(form: any){
+   
+    // this.api.update(form).subscribe((response: any) => {
+     
+    // });
+
   }
 
 }
