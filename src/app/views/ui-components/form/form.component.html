@@ -34,7 +34,7 @@
       </mat-form-field> -->
       <div class="form-element" >
       
-        <button mat-raised-button color="primary" type="submit" class="button" >Save Game</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!formGroup.valid" class="button" >Save Game</button>
       </div>
     </form>
   </div>
